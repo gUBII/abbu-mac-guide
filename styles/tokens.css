@@ -28,15 +28,18 @@
   /* ---------- Type scale (large by design) ---------- */
   --font-scale: 1;  /* user-controlled via A− / A+ */
 
+  /* Small sizes stay fixed (already small enough on phones) */
   --text-xs:   calc(15px * var(--font-scale));
   --text-sm:   calc(17px * var(--font-scale));
   --text-base: calc(19px * var(--font-scale));
   --text-lg:   calc(22px * var(--font-scale));
-  --text-xl:   calc(28px * var(--font-scale));
-  --text-2xl:  calc(36px * var(--font-scale));
-  --text-3xl:  calc(48px * var(--font-scale));
-  --text-4xl:  calc(56px * var(--font-scale));
-  --text-step: calc(80px * var(--font-scale));
+
+  /* Fluid clamps shrink gracefully on phones, hit fixed targets on desktop */
+  --text-xl:   calc(clamp(22px, 1.2vw + 18px, 28px) * var(--font-scale));
+  --text-2xl:  calc(clamp(26px, 2.5vw + 16px, 36px) * var(--font-scale));
+  --text-3xl:  calc(clamp(34px, 3.5vw + 18px, 48px) * var(--font-scale));
+  --text-4xl:  calc(clamp(34px, 4vw + 20px, 56px) * var(--font-scale));
+  --text-step: calc(clamp(48px, 6vw + 24px, 80px) * var(--font-scale));
 
   --leading-tight: 1.05;
   --leading-snug:  1.15;

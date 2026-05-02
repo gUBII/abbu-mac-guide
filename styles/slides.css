@@ -354,8 +354,13 @@ figure figcaption {
 }
 
 @media (max-width: 700px) {
+  .page {
+    padding: var(--space-5) var(--space-4);
+  }
+
   .slide {
     padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-md);
   }
 
   .slide-step {
@@ -364,10 +369,74 @@ figure figcaption {
   }
 
   .step-number {
-    font-size: var(--text-3xl);
+    margin-top: 0;
+  }
+
+  .slide-header {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  .slide-outcome {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .steps li {
+    grid-template-columns: 32px 1fr;
+    gap: var(--space-3);
+  }
+
+  .steps li::before {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: var(--text-base);
   }
 
   .toolbar {
     border-radius: var(--radius-md);
+    padding: var(--space-1) var(--space-2);
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    row-gap: var(--space-1);
+    justify-content: center;
+  }
+
+  .toolbar-brand {
+    font-size: var(--text-sm);
+    padding-left: var(--space-1);
+  }
+
+  .toolbar-controls {
+    gap: 2px;
+  }
+
+  .tool-btn {
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--text-xs);
+  }
+
+  .slide-nav a {
+    font-size: var(--text-sm);
+    padding: var(--space-2) var(--space-3);
+  }
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .slide {
+    padding: var(--space-5) var(--space-3);
+  }
+
+  .slide-counter::before {
+    content: "";
+  }
+
+  .toolbar-brand {
+    /* Show short name only on tiny phones */
+    font-size: var(--text-xs);
   }
 }

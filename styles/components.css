@@ -164,7 +164,6 @@ body[data-bn="hidden"] .bn-pill {
 }
 
 .hub-hero h1 {
-  font-size: clamp(var(--text-3xl), 1rem + 5vw, var(--text-4xl));
   margin-bottom: var(--space-4);
 }
 
@@ -179,7 +178,7 @@ body[data-bn="hidden"] .bn-pill {
 
 .modules-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
   gap: var(--space-5);
   margin: var(--space-7) 0;
 }
@@ -430,6 +429,97 @@ body[data-bn="hidden"] .bn-pill {
     left: 50%;
     top: -18px;
     transform: translateX(-50%);
+  }
+
+  .hub-hero {
+    padding: var(--space-7) var(--space-4) var(--space-5);
+  }
+
+  .bn-pill {
+    flex-wrap: wrap;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .recovery,
+  .success,
+  .tip {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .reference-band {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .reference-links {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .reference-links a {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .module-card {
+    padding: var(--space-5);
+  }
+
+  /* Tables: enable horizontal scroll without breaking layout */
+  .compare-table {
+    font-size: var(--text-sm);
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .compare-table thead,
+  .compare-table tbody,
+  .compare-table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: var(--space-3);
+    white-space: normal;
+  }
+
+  .compare-table .arrow {
+    width: 36px;
+  }
+
+  .quiz-card {
+    padding: var(--space-4);
+  }
+
+  .quiz-question {
+    font-size: var(--text-base);
+  }
+}
+
+@media (max-width: 420px) {
+  .hub-hero {
+    padding: var(--space-6) var(--space-3) var(--space-4);
+  }
+
+  .module-card {
+    padding: var(--space-4);
+  }
+
+  .module-card .num {
+    font-size: var(--text-2xl);
+  }
+
+  .reference-band {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: var(--space-2);
+    font-size: var(--text-sm);
   }
 }
 
