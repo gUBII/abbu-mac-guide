@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat Sheet, Print and Keep</title>
+  <meta name="description" content="One-page printable shortcut reference for daily MacBook use.">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+  <link rel="stylesheet" href="../styles/slides.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/print.css" media="print">
+  <style>
+    .cheat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-5);
+      margin-top: var(--space-5);
+    }
+    .cheat-block {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .cheat-block h3 {
+      margin: 0 0 var(--space-3);
+      padding-bottom: var(--space-2);
+      border-bottom: 2px solid var(--saffron);
+      color: var(--saffron-deep);
+      font-size: var(--text-lg);
+    }
+    .cheat-block dl {
+      margin: 0;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-2) var(--space-4);
+      align-items: baseline;
+    }
+    .cheat-block dt {
+      font-weight: 500;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .cheat-block dd {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.95em;
+    }
+    @media print {
+      .cheat-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4mm;
+      }
+      .cheat-block {
+        padding: 3mm;
+      }
+      .cheat-block h3 {
+        font-size: 11pt;
+      }
+      .cheat-block dl {
+        gap: 1mm 3mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="toolbar">
+      <a class="toolbar-brand" href="../index.html" data-role="home">← Abbu's Mac Guide</a>
+      <div class="toolbar-controls">
+        <button class="tool-btn" data-action="font-down">A−</button>
+        <span class="tool-btn" data-role="font-label">100%</span>
+        <button class="tool-btn" data-action="font-up">A+</button>
+        <button class="tool-btn" data-action="toggle-bn" aria-pressed="true">বাংলা</button>
+        <button class="tool-btn" data-action="print">⎙ Print</button>
+      </div>
+    </header>
+
+    <section class="slide">
+      <div class="slide-header">
+        <span>Reference</span>
+        <span>Cheat Sheet</span>
+      </div>
+
+      <div class="slide-step">
+        <span class="step-number">⌘</span>
+        <h1 class="slide-title">Cheat Sheet, print this. Keep it next to your Mac.</h1>
+      </div>
+
+      <p class="slide-outcome">
+        Click <strong>⎙ Print</strong> at the top right, then choose
+        <em>Save as PDF</em> or print to paper. Keep it visible.
+      </p>
+
+      <aside class="bn-pill" lang="bn">
+        আব্বু, এই পাতাটি প্রিন্ট করে Mac-এর পাশে রাখুন। দেখে দেখে কাজ করুন।
+      </aside>
+
+      <div class="cheat-grid">
+
+        <div class="cheat-block">
+          <h3>The Big Five</h3>
+          <dl>
+            <dt><kbd>⌘</kbd>+<kbd>C</kbd></dt><dd>Copy</dd>
+            <dt><kbd>⌘</kbd>+<kbd>V</kbd></dt><dd>Paste</dd>
+            <dt><kbd>⌘</kbd>+<kbd>X</kbd></dt><dd>Cut</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Z</kbd></dt><dd>Undo (panic button)</dd>
+            <dt><kbd>⌘</kbd>+<kbd>S</kbd></dt><dd>Save</dd>
+          </dl>
+        </div>
+
+        <div class="cheat-block">
+          <h3>Find Anything</h3>
+          <dl>
+            <dt><kbd>⌘</kbd>+<kbd>Space</kbd></dt><dd>Spotlight, search the whole Mac</dd>
+            <dt><kbd>⌘</kbd>+<kbd>F</kbd></dt><dd>Find on this page</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Tab</kbd></dt><dd>Switch between open apps</dd>
+            <dt><kbd>Space</kbd></dt><dd>Quick Look, preview any file</dd>
+          </dl>
+        </div>
+
+        <div class="cheat-block">
+          <h3>Windows &amp; Apps</h3>
+          <dl>
+            <dt><kbd>⌘</kbd>+<kbd>N</kbd></dt><dd>New window or document</dd>
+            <dt><kbd>⌘</kbd>+<kbd>T</kbd></dt><dd>New tab in browser</dd>
+            <dt><kbd>⌘</kbd>+<kbd>W</kbd></dt><dd>Close window or tab</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Q</kbd></dt><dd>Quit the app</dd>
+            <dt><kbd>⌘</kbd>+<kbd>M</kbd></dt><dd>Minimize to Dock</dd>
+            <dt><kbd>⌘</kbd>+<kbd>H</kbd></dt><dd>Hide app</dd>
+          </dl>
+        </div>
+
+        <div class="cheat-block">
+          <h3>If Things Go Wrong</h3>
+          <dl>
+            <dt><kbd>⌘</kbd>+<kbd>Z</kbd></dt><dd>Undo whatever just happened</dd>
+            <dt><kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>Esc</kbd></dt><dd>Force Quit a frozen app</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd></dt><dd>Reopen closed browser tab</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></dt><dd>Redo (undo your undo)</dd>
+          </dl>
+        </div>
+
+        <div class="cheat-block">
+          <h3>Screenshots</h3>
+          <dl>
+            <dt><kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>3</kbd></dt><dd>Whole screen</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>4</kbd></dt><dd>Drag to choose area</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>5</kbd></dt><dd>Screenshot menu (record video)</dd>
+            <dd style="grid-column: 1 / -1; font-style: italic; color: var(--ink-faint); margin-top: var(--space-2);">
+              Screenshots save to your Desktop.
+            </dd>
+          </dl>
+        </div>
+
+        <div class="cheat-block">
+          <h3>Files &amp; Finder</h3>
+          <dl>
+            <dt><kbd>⌘</kbd>+<kbd>N</kbd></dt><dd>New Finder window</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Delete</kbd></dt><dd>Move to Trash</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd></dt><dd>Jump to Desktop</dd>
+            <dt><kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>L</kbd></dt><dd>Jump to Downloads</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd></dt><dd>Jump to Documents</dd>
+            <dt><kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd></dt><dd>Jump to Home folder</dd>
+          </dl>
+        </div>
+
+        <div class="cheat-block">
+          <h3>Where Things Live</h3>
+          <dl>
+            <dt>Downloaded files</dt><dd>Finder → Downloads</dd>
+            <dt>Screenshots</dt><dd>Desktop</dd>
+            <dt>Saved Word/Excel</dt><dd>Wherever you chose, usually Documents</dd>
+            <dt>Trash</dt><dd>Bottom-right of Dock</dd>
+            <dt>All your apps</dt><dd>Finder → Applications</dd>
+          </dl>
+        </div>
+
+        <div class="cheat-block">
+          <h3>The Special Keys</h3>
+          <dl>
+            <dt><kbd>⌘</kbd></dt><dd>Command, like Ctrl on Windows</dd>
+            <dt><kbd>⌥</kbd></dt><dd>Option, like Alt on Windows</dd>
+            <dt><kbd>⌃</kbd></dt><dd>Control, used in some shortcuts</dd>
+            <dt><kbd>⇧</kbd></dt><dd>Shift</dd>
+            <dt><kbd>fn</kbd></dt><dd>Function, bottom left of keyboard</dd>
+          </dl>
+        </div>
+
+      </div>
+
+      <aside class="bn-pill" lang="bn" style="margin-top: var(--space-7);">
+        আব্বু, সব মনে রাখার দরকার নেই। এই পাতা পাশে রাখুন, লাগলে দেখে নিন।
+      </aside>
+
+    </section>
+  </main>
+
+  <script src="../scripts/ui.js"></script>
+  <script src="../scripts/nav.js"></script>
+</body>
+</html>

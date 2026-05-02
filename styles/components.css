@@ -1,0 +1,454 @@
+/* Components — Bengali pill, recovery rail, callout cards, hub UI. */
+
+/* ---------- Bengali annotation pill ---------- */
+.bn-pill {
+  display: flex;
+  gap: var(--space-3);
+  align-items: flex-start;
+  background: var(--teal-bn-tint);
+  border-left: 4px solid var(--teal-bn);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-5);
+  font-family: var(--font-bn);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--ink);
+  margin: var(--space-3) 0;
+  max-width: var(--content-width);
+}
+
+.bn-pill::before {
+  content: "বাংলা";
+  flex-shrink: 0;
+  font-family: var(--font-bn);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--teal-bn);
+  background: oklch(98% 0.018 200);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-pill);
+  border: 1px solid oklch(85% 0.04 200);
+  align-self: center;
+}
+
+/* When Bengali is hidden via toggle */
+body[data-bn="hidden"] .bn-pill {
+  display: none;
+}
+
+/* ---------- Recovery / warning rail ---------- */
+.recovery {
+  background: var(--red-tint);
+  border-left: 4px solid var(--red-stop);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-3) 0;
+  max-width: var(--content-width);
+}
+
+.recovery::before {
+  content: "If something goes wrong";
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--red-stop);
+  margin-bottom: var(--space-2);
+}
+
+.recovery h4 {
+  color: var(--ink);
+  margin-bottom: var(--space-2);
+}
+
+/* ---------- Success / "you got it" rail ---------- */
+.success {
+  background: var(--green-tint);
+  border-left: 4px solid var(--green-go);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-3) 0;
+  max-width: var(--content-width);
+}
+
+.success::before {
+  content: "You did it";
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--green-go);
+  margin-bottom: var(--space-2);
+}
+
+/* ---------- Tip / aside callout ---------- */
+.tip {
+  background: var(--saffron-tint);
+  border-left: 4px solid var(--saffron);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-3) 0;
+  max-width: var(--content-width);
+}
+
+.tip::before {
+  content: "Quick tip";
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--saffron-deep);
+  margin-bottom: var(--space-2);
+}
+
+/* ---------- Comparison / Rosetta table ---------- */
+.compare-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: var(--space-5) 0;
+  font-size: var(--text-base);
+  background: var(--paper);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+
+.compare-table th,
+.compare-table td {
+  padding: var(--space-4) var(--space-4);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+
+.compare-table thead th {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.compare-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compare-table tbody tr:hover {
+  background: var(--saffron-tint);
+}
+
+.compare-table .arrow {
+  color: var(--saffron-deep);
+  font-weight: 700;
+  text-align: center;
+  width: 60px;
+}
+
+/* ---------- Hub: module cards ---------- */
+.hub {
+  max-width: var(--hub-width);
+}
+
+.hub-hero {
+  text-align: center;
+  padding: var(--space-9) var(--space-5) var(--space-7);
+}
+
+.hub-hero h1 {
+  font-size: clamp(var(--text-3xl), 1rem + 5vw, var(--text-4xl));
+  margin-bottom: var(--space-4);
+}
+
+.hub-hero .lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--ink-soft);
+  max-width: 50ch;
+  margin: 0 auto;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-5);
+  margin: var(--space-7) 0;
+}
+
+.module-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-decoration: none;
+  color: var(--ink);
+  transition:
+    transform var(--duration-normal) var(--ease-out-expo),
+    border-color var(--duration-normal) var(--ease-out-expo),
+    box-shadow var(--duration-normal) var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.module-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--saffron);
+  box-shadow: var(--shadow-card);
+}
+
+.module-card[data-status="completed"]::after {
+  content: "✓";
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--green-go);
+  color: var(--paper);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.module-card[data-status="planned"] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.module-card[data-status="planned"]::after {
+  content: "Coming soon";
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.module-card .num {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--saffron);
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--space-3);
+}
+
+.module-card h3 {
+  margin-bottom: var(--space-2);
+}
+
+.module-card p {
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}
+
+.module-card .meta {
+  margin-top: auto;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- Reference quick-links band ---------- */
+.reference-band {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin: var(--space-7) 0;
+}
+
+.reference-band h2 {
+  color: var(--paper);
+  margin-bottom: var(--space-4);
+}
+
+.reference-band p {
+  color: oklch(88% 0.01 280);
+  margin-bottom: var(--space-5);
+}
+
+.reference-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+
+.reference-links a {
+  display: block;
+  padding: var(--space-4);
+  background: oklch(28% 0.015 280);
+  border: 1px solid oklch(35% 0.015 280);
+  border-radius: var(--radius-md);
+  color: var(--paper);
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease-out-expo);
+}
+
+.reference-links a:hover {
+  background: var(--saffron);
+  color: var(--ink);
+  border-color: var(--saffron);
+}
+
+.reference-links a strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-1);
+  color: inherit;
+}
+
+.reference-links a span {
+  font-size: var(--text-xs);
+  opacity: 0.8;
+}
+
+/* ---------- Quiz cards ---------- */
+.quiz-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  margin-bottom: var(--space-4);
+}
+
+.quiz-question {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-4);
+  color: var(--ink);
+}
+
+.quiz-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.quiz-options li {
+  margin: 0;
+}
+
+.quiz-options label {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background: var(--paper-deep);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out-expo);
+}
+
+.quiz-options label:hover {
+  border-color: var(--saffron);
+  background: var(--saffron-tint);
+}
+
+.quiz-options input {
+  accent-color: var(--saffron);
+  width: 20px;
+  height: 20px;
+}
+
+.quiz-options input:checked + span {
+  font-weight: 600;
+}
+
+.quiz-reveal {
+  margin-top: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--green-tint);
+  border-left: 3px solid var(--green-go);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  display: none;
+}
+
+.quiz-card[data-revealed="true"] .quiz-reveal {
+  display: block;
+}
+
+/* ---------- Visual flow diagram (boxes + arrows) ---------- */
+.flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-3);
+  align-items: center;
+  margin: var(--space-5) 0;
+}
+
+.flow-step {
+  background: var(--paper);
+  border: 2px solid var(--saffron);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--ink);
+  font-weight: 600;
+  position: relative;
+}
+
+.flow-step + .flow-step::before {
+  content: "→";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--saffron-deep);
+  font-size: var(--text-xl);
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .flow-step + .flow-step::before {
+    content: "↓";
+    left: 50%;
+    top: -18px;
+    transform: translateX(-50%);
+  }
+}
+
+/* ---------- Section divider ---------- */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin: var(--space-8) 0;
+  color: var(--ink-faint);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-base);
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}

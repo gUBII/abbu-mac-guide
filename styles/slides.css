@@ -1,0 +1,373 @@
+/* Slide layout — the core unit of the manual. */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  background-image:
+    radial-gradient(
+      circle at 20% 0%,
+      oklch(95% 0.025 75) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 100%,
+      oklch(95% 0.02 200) 0%,
+      transparent 50%
+    );
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: var(--slide-width);
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-5);
+}
+
+/* ---------- Page chrome (toolbar at top) ---------- */
+.toolbar {
+  position: sticky;
+  top: var(--space-3);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-7);
+  padding: var(--space-2) var(--space-3);
+  background: oklch(97% 0.012 85 / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-pill);
+}
+
+.toolbar-brand {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  padding-left: var(--space-2);
+}
+
+.toolbar-controls {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+}
+
+.tool-btn {
+  appearance: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: var(--space-1) var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition:
+    background var(--duration-fast) var(--ease-out-expo),
+    color var(--duration-fast) var(--ease-out-expo);
+}
+
+.tool-btn:hover {
+  background: var(--saffron-tint);
+  color: var(--ink);
+}
+
+.tool-btn[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.tool-btn:focus-visible {
+  outline: 2px solid var(--saffron);
+  outline-offset: 2px;
+}
+
+.tool-icon {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* ---------- The slide unit ---------- */
+.slide {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-7);
+  margin-bottom: var(--space-7);
+  box-shadow: var(--shadow-card);
+  position: relative;
+}
+
+.slide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-6);
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--rule);
+}
+
+.slide-counter::before {
+  content: "Slide ";
+}
+
+.slide-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-5);
+  align-items: start;
+  margin-bottom: var(--space-5);
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-size: var(--text-step);
+  line-height: 1;
+  color: var(--saffron);
+  font-weight: 700;
+  font-feature-settings: 'lnum', 'tnum';
+  letter-spacing: -0.04em;
+  align-self: start;
+  margin-top: -0.1em;
+}
+
+.slide-title {
+  align-self: center;
+}
+
+.slide-outcome {
+  display: block;
+  background: var(--saffron-tint);
+  border-left: 4px solid var(--saffron);
+  padding: var(--space-4) var(--space-5);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-style: italic;
+  color: var(--ink);
+  margin: 0 0 var(--space-6);
+  max-width: none;
+}
+
+.slide-outcome::before {
+  content: "What you'll learn → ";
+  font-weight: 600;
+  font-style: normal;
+  color: var(--saffron-deep);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.slide-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.slide-body > * {
+  max-width: var(--content-width);
+}
+
+/* Numbered steps within a slide body */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: var(--space-4);
+  align-items: baseline;
+  padding-left: 0;
+}
+
+.steps li::before {
+  content: counter(step);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--saffron-deep);
+  font-weight: 600;
+  text-align: center;
+  background: var(--saffron-tint);
+  border-radius: var(--radius-pill);
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  align-self: start;
+}
+
+/* Slide footer / nav */
+.slide-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--rule);
+}
+
+.slide-nav a {
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--ink-soft);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-fast) var(--ease-out-expo);
+}
+
+.slide-nav a:hover {
+  color: var(--ink);
+  background: var(--saffron-tint);
+}
+
+.slide-nav a[rel="next"] {
+  color: var(--saffron-deep);
+  font-weight: 600;
+}
+
+/* Image placeholders — clearly marked, ready to be replaced */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  margin: 0;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      var(--paper-deep),
+      var(--paper-deep) 12px,
+      var(--paper) 12px,
+      var(--paper) 24px
+    );
+  border: 2px dashed var(--rule-strong);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.placeholder[data-needed]::before {
+  content: "📷 Screenshot needed";
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--saffron-deep);
+  background: var(--saffron-tint);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+}
+
+.placeholder-label {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--ink);
+  font-weight: 500;
+  max-width: 50ch;
+  display: block;
+}
+
+.placeholder-aspect {
+  display: block;
+  margin-top: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+}
+
+.placeholder figcaption {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* Real images replace placeholders later */
+figure {
+  margin: 0;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--rule);
+}
+
+figure figcaption {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* Progress dots beneath toolbar (set by nav.js) */
+.progress {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-5);
+}
+
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rule-strong);
+  transition: all var(--duration-fast) var(--ease-out-expo);
+}
+
+.progress-dot[data-active="true"] {
+  background: var(--saffron);
+  transform: scale(1.4);
+}
+
+.progress-dot[data-completed="true"] {
+  background: var(--saffron-deep);
+}
+
+@media (max-width: 700px) {
+  .slide {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .slide-step {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+
+  .step-number {
+    font-size: var(--text-3xl);
+  }
+
+  .toolbar {
+    border-radius: var(--radius-md);
+  }
+}

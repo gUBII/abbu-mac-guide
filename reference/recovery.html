@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recovery Card, If something goes wrong</title>
+  <meta name="description" content="The panic button page. If something feels wrong, start here.">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+  <link rel="stylesheet" href="../styles/slides.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/print.css" media="print">
+  <style>
+    .panic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-5);
+      margin: var(--space-5) 0;
+    }
+    .panic-card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-left: 5px solid var(--saffron);
+      border-radius: var(--radius-md);
+      padding: var(--space-5);
+    }
+    .panic-card h3 {
+      margin: 0 0 var(--space-3);
+      color: var(--ink);
+      font-family: var(--font-display);
+    }
+    .panic-card .label {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--saffron-deep);
+      background: var(--saffron-tint);
+      padding: 2px var(--space-3);
+      border-radius: var(--radius-pill);
+      margin-bottom: var(--space-3);
+      font-weight: 600;
+    }
+    .panic-card.danger {
+      border-left-color: var(--red-stop);
+    }
+    .panic-card.danger .label {
+      color: var(--red-stop);
+      background: var(--red-tint);
+    }
+    .panic-card ol {
+      padding-left: var(--space-5);
+      margin: 0;
+    }
+    .panic-card ol li {
+      margin-bottom: var(--space-2);
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="toolbar">
+      <a class="toolbar-brand" href="../index.html" data-role="home">← Abbu's Mac Guide</a>
+      <div class="toolbar-controls">
+        <button class="tool-btn" data-action="font-down">A−</button>
+        <span class="tool-btn" data-role="font-label">100%</span>
+        <button class="tool-btn" data-action="font-up">A+</button>
+        <button class="tool-btn" data-action="toggle-bn" aria-pressed="true">বাংলা</button>
+        <button class="tool-btn" data-action="print">⎙ PDF</button>
+      </div>
+    </header>
+
+    <section class="slide">
+      <div class="slide-header">
+        <span>Reference</span>
+        <span>Recovery Card</span>
+      </div>
+
+      <div class="slide-step">
+        <span class="step-number">!</span>
+        <h1 class="slide-title">Don't panic. Start here.</h1>
+      </div>
+
+      <p class="slide-outcome">
+        Anything that feels broken usually isn't. Find your problem on this page —
+        the fix is probably one keystroke away.
+      </p>
+
+      <aside class="bn-pill" lang="bn">
+        আব্বু, কিছু ভুল হয়েছে মনে হলে থামুন, এই পাতায় খুঁজুন। বেশিরভাগ সমস্যা এক চাপেই ঠিক হয়।
+      </aside>
+
+      <div class="panic-grid">
+
+        <article class="panic-card">
+          <span class="label">Most useful</span>
+          <h3>I just clicked the wrong thing.</h3>
+          <p>Press <kbd>⌘</kbd>+<kbd>Z</kbd> immediately. This undoes typing,
+            file moves, deletions, almost everything. Press it more than once
+            to keep going back.</p>
+        </article>
+
+        <article class="panic-card">
+          <span class="label">Lost a file</span>
+          <h3>I can't find the file I just saved.</h3>
+          <ol>
+            <li>Press <kbd>⌘</kbd>+<kbd>Space</kbd> and type the file's name.</li>
+            <li>If you don't remember the name, open Finder → click <em>Recents</em>.</li>
+            <li>If you downloaded it, check Finder → <em>Downloads</em>.</li>
+          </ol>
+        </article>
+
+        <article class="panic-card">
+          <span class="label">Frozen app</span>
+          <h3>An app stopped responding.</h3>
+          <ol>
+            <li>Press <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>Esc</kbd>.</li>
+            <li>Click the stuck app from the list.</li>
+            <li>Click <em>Force Quit</em>.</li>
+          </ol>
+          <p style="margin-top: var(--space-3); font-size: var(--text-sm); color: var(--ink-soft);">
+            The other apps are unaffected.
+          </p>
+        </article>
+
+        <article class="panic-card">
+          <span class="label">Closed by mistake</span>
+          <h3>I closed a browser tab I needed.</h3>
+          <p>Press <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>. Press it again
+            to keep reopening older tabs.</p>
+        </article>
+
+        <article class="panic-card">
+          <span class="label">Deleted</span>
+          <h3>I deleted a file by accident.</h3>
+          <ol>
+            <li>Open Trash (bottom-right of Dock).</li>
+            <li>Find the file. Right-click → <em>Put Back</em>.</li>
+            <li>It returns to where it was deleted from.</li>
+          </ol>
+        </article>
+
+        <article class="panic-card">
+          <span class="label">Stuck</span>
+          <h3>The cursor disappeared / mouse not responding.</h3>
+          <ol>
+            <li>Wiggle the trackpad with your finger, Mac will magnify the cursor.</li>
+            <li>If still nothing, close the lid for 5 seconds, open it again.</li>
+            <li>Last resort: hold the power button until the Mac shuts down. Wait. Power on.</li>
+          </ol>
+        </article>
+
+        <article class="panic-card">
+          <span class="label">Black screen</span>
+          <h3>The screen went dark.</h3>
+          <ol>
+            <li>Tap any key, or click the trackpad.</li>
+            <li>If still dark, press the power button once.</li>
+            <li>Check the brightness key (top row, sun icons).</li>
+          </ol>
+        </article>
+
+        <article class="panic-card">
+          <span class="label">Can't type</span>
+          <h3>Typing isn't going where I want.</h3>
+          <p>Click once on the box or window where you want to type. Mac follows
+            the click, whatever you clicked last is "active".</p>
+        </article>
+
+        <article class="panic-card">
+          <span class="label">Window vanished</span>
+          <h3>An app window disappeared.</h3>
+          <ol>
+            <li>Look at the Dock, does the app icon have a small dot under it?
+              If yes, click it once.</li>
+            <li>Press <kbd>⌘</kbd>+<kbd>Tab</kbd> and pick the app.</li>
+            <li>Or press <kbd>F3</kbd> (or Mission Control key) to see all open windows.</li>
+          </ol>
+        </article>
+
+        <article class="panic-card danger">
+          <span class="label">Stay safe</span>
+          <h3>A box is asking for my Apple password.</h3>
+          <p><strong>Stop and think.</strong> Did you just install something or change a setting?
+            If yes, type your password. If a password box appears for no reason
+            you understand, click <em>Cancel</em>.</p>
+          <aside class="bn-pill" lang="bn">
+            আব্বু, পাসওয়ার্ড চাইলে আগে ভাবুন। আমি কি নিজে কিছু চালু করেছি? না বুঝলে Cancel চাপুন।
+          </aside>
+        </article>
+
+        <article class="panic-card danger">
+          <span class="label">Stay safe</span>
+          <h3>A website looks suspicious.</h3>
+          <p>Don't type passwords or banking info into any window unless you opened
+            it yourself. Close it with <kbd>⌘</kbd>+<kbd>W</kbd>. If your browser
+            won't close, force-quit it (<kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>Esc</kbd>).</p>
+        </article>
+
+        <article class="panic-card danger">
+          <span class="label">Privacy</span>
+          <h3>Don't paste these into ChatGPT, ATLAS, Claude, or Gemini.</h3>
+          <ol>
+            <li>Passwords or PINs.</li>
+            <li>Bank account numbers, credit card numbers.</li>
+            <li>National ID, passport, NID number.</li>
+            <li>Medical reports with your name on them.</li>
+          </ol>
+          <aside class="bn-pill" lang="bn">
+            আব্বু, পাসওয়ার্ড, ব্যাংক একাউন্ট, ক্রেডিট কার্ড নম্বর, NID কখনোই AI-কে দেবেন না। এগুলো সম্পূর্ণ ব্যক্তিগত।
+          </aside>
+        </article>
+
+      </div>
+
+      <div class="tip" style="margin-top: var(--space-7);">
+        <strong>Still stuck?</strong> Take a screenshot of what you're seeing
+        with <kbd>⌘</kbd>+<kbd>Shift</kbd>+<kbd>4</kbd>, then send it to your son
+        on WhatsApp. He can usually fix it from a picture.
+      </div>
+
+    </section>
+  </main>
+
+  <script src="../scripts/ui.js"></script>
+  <script src="../scripts/nav.js"></script>
+</body>
+</html>

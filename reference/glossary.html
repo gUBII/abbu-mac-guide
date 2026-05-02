@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossary, Mac Words Explained</title>
+  <meta name="description" content="Plain-English definitions for every Mac term used in this guide.">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+  <link rel="stylesheet" href="../styles/slides.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/print.css" media="print">
+  <style>
+    .glossary {
+      display: grid;
+      gap: var(--space-3);
+      max-width: var(--content-width);
+    }
+    .term {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-5);
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .term-name {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      color: var(--saffron-deep);
+      margin: 0 0 var(--space-2);
+      font-weight: 700;
+    }
+    .term-meaning {
+      color: var(--ink);
+      margin: 0 0 var(--space-2);
+    }
+    .term-was {
+      font-size: var(--text-sm);
+      color: var(--ink-faint);
+      font-style: italic;
+    }
+    .term-was strong {
+      font-style: normal;
+      color: var(--ink-soft);
+    }
+    .alpha-jump {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      justify-content: center;
+      margin: var(--space-5) 0 var(--space-7);
+      font-family: var(--font-mono);
+    }
+    .alpha-jump a {
+      display: inline-block;
+      padding: var(--space-2) var(--space-3);
+      background: var(--paper-deep);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .alpha-jump a:hover {
+      background: var(--saffron);
+      border-color: var(--saffron);
+    }
+    @media print {
+      .alpha-jump { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="toolbar">
+      <a class="toolbar-brand" href="../index.html" data-role="home">← Abbu's Mac Guide</a>
+      <div class="toolbar-controls">
+        <button class="tool-btn" data-action="font-down">A−</button>
+        <span class="tool-btn" data-role="font-label">100%</span>
+        <button class="tool-btn" data-action="font-up">A+</button>
+        <button class="tool-btn" data-action="toggle-bn" aria-pressed="true">বাংলা</button>
+        <button class="tool-btn" data-action="print">⎙ PDF</button>
+      </div>
+    </header>
+
+    <section class="slide">
+      <div class="slide-header">
+        <span>Reference</span>
+        <span>Glossary</span>
+      </div>
+
+      <div class="slide-step">
+        <span class="step-number">A–Z</span>
+        <h1 class="slide-title">Glossary, every Mac word, explained simply.</h1>
+      </div>
+
+      <p class="slide-outcome">
+        Whenever you hear a Mac word and don't know what it means, look here.
+        Each term tells you what it does and what it was called in Windows.
+      </p>
+
+      <nav class="alpha-jump" aria-label="Jump to letter">
+        <a href="#a">A</a><a href="#c">C</a><a href="#d">D</a><a href="#f">F</a>
+        <a href="#h">H</a><a href="#i">I</a><a href="#l">L</a><a href="#m">M</a>
+        <a href="#p">P</a><a href="#q">Q</a><a href="#s">S</a><a href="#t">T</a>
+      </nav>
+
+      <div class="glossary">
+
+        <div class="term" id="a">
+          <p class="term-name">Apple Menu</p>
+          <p class="term-meaning">
+            The black apple icon at the very top-left of the screen. Click it for
+            sleep, restart, shut down, and System Settings.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> the Start Menu's "Power" button area.</p>
+        </div>
+
+        <div class="term">
+          <p class="term-name">Application (App)</p>
+          <p class="term-meaning">
+            A program, Word, Safari, WhatsApp, ATLAS. All your apps live in
+            the <em>Applications</em> folder.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> a Program in <em>Program Files</em>.</p>
+        </div>
+
+        <div class="term">
+          <p class="term-name">ATLAS</p>
+          <p class="term-meaning">
+            A web browser built around ChatGPT. You use it for asking questions,
+            researching, and getting answers. It's just an app, open it like
+            any other.
+          </p>
+          <p class="term-was"><strong>Like:</strong> Edge or Chrome, but ChatGPT-first.</p>
+        </div>
+
+        <div class="term" id="c">
+          <p class="term-name">⌘ (Command Key)</p>
+          <p class="term-meaning">
+            The key with the cloverleaf symbol, used the way you used Ctrl
+            on Windows. <kbd>⌘</kbd>+<kbd>C</kbd> copies, <kbd>⌘</kbd>+<kbd>V</kbd> pastes.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> the Ctrl key.</p>
+        </div>
+
+        <div class="term" id="d">
+          <p class="term-name">Desktop</p>
+          <p class="term-meaning">
+            The screen you see when no apps are open. You can put files and
+            folders here, but try to keep it tidy.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> Desktop (same word, same idea).</p>
+        </div>
+
+        <div class="term">
+          <p class="term-name">Dock</p>
+          <p class="term-meaning">
+            The strip of icons at the bottom of the screen. Click any icon to
+            open that app. Drag apps in and out to keep your favourites handy.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> the Taskbar.</p>
+        </div>
+
+        <div class="term">
+          <p class="term-name">Downloads (folder)</p>
+          <p class="term-meaning">
+            Where every file you download from the internet lands by default.
+            Files saved from WhatsApp, email attachments, they all go here first.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> the Downloads folder (same).</p>
+        </div>
+
+        <div class="term" id="f">
+          <p class="term-name">Finder</p>
+          <p class="term-meaning">
+            The app you use to look at all your files and folders. It's always
+            running. Click the smiley-face icon in the Dock.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> File Explorer.</p>
+        </div>
+
+        <div class="term">
+          <p class="term-name">Force Quit</p>
+          <p class="term-meaning">
+            How you close an app that's frozen. Press <kbd>⌘</kbd>+<kbd>⌥</kbd>+<kbd>Esc</kbd>,
+            pick the stuck app, click Force Quit.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> End Task in Task Manager.</p>
+        </div>
+
+        <div class="term" id="h">
+          <p class="term-name">Home Folder</p>
+          <p class="term-meaning">
+            Your personal main folder, has your name on it. Inside live
+            Documents, Downloads, Desktop, Pictures, Music, and more.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> <code>C:\Users\YourName</code>.</p>
+        </div>
+
+        <div class="term" id="i">
+          <p class="term-name">iCloud Drive</p>
+          <p class="term-meaning">
+            Apple's cloud storage. Files saved here are also on Apple's servers,
+            so if your Mac breaks you don't lose them. For your case, Google
+            Drive does the same job and works with your Android phone too.
+          </p>
+          <p class="term-was"><strong>Like:</strong> OneDrive on Windows.</p>
+        </div>
+
+        <div class="term" id="l">
+          <p class="term-name">Launchpad</p>
+          <p class="term-meaning">
+            A grid showing every app on your Mac. You can also press
+            <kbd>⌘</kbd>+<kbd>Space</kbd> and type the app's name, usually faster.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> the Start Menu's All Apps list.</p>
+        </div>
+
+        <div class="term" id="m">
+          <p class="term-name">Menu Bar</p>
+          <p class="term-meaning">
+            The thin strip at the very top of the screen. It shows the menus
+            for whichever app you're using right now (File, Edit, View, etc.)
+            plus your battery, Wi-Fi, time, and so on.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> the menus inside each app's window.
+            On Mac, the menus moved to the top.</p>
+        </div>
+
+        <div class="term" id="p">
+          <p class="term-name">Preview</p>
+          <p class="term-meaning">
+            The built-in app that opens images and PDFs. You can also crop,
+            mark up, and convert files in it.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> Photos / Adobe Reader / Paint mixed together.</p>
+        </div>
+
+        <div class="term" id="q">
+          <p class="term-name">Quick Look</p>
+          <p class="term-meaning">
+            Select any file in Finder and press <kbd>Space</kbd>. A preview pops up
+            without opening the app. Press <kbd>Space</kbd> again to close.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> the Preview pane in File Explorer (but better).</p>
+        </div>
+
+        <div class="term" id="s">
+          <p class="term-name">Spotlight</p>
+          <p class="term-meaning">
+            The Mac's universal search. Press <kbd>⌘</kbd>+<kbd>Space</kbd>,
+            type anything, an app, a file, a setting, even maths. Hit Enter
+            to open it.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> the Start Menu / Search bar.</p>
+        </div>
+
+        <div class="term">
+          <p class="term-name">System Settings</p>
+          <p class="term-meaning">
+            Where you change Wi-Fi, sound, display, trackpad, keyboard, and
+            everything else about how your Mac works. Apple menu → System Settings.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> Settings / Control Panel.</p>
+        </div>
+
+        <div class="term" id="t">
+          <p class="term-name">TextEdit</p>
+          <p class="term-meaning">
+            Mac's basic text editor. Good for jotting notes. Not as fancy as Word.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> Notepad.</p>
+        </div>
+
+        <div class="term">
+          <p class="term-name">Trash</p>
+          <p class="term-meaning">
+            Where deleted files go. They sit there until you choose
+            <em>Empty Trash</em>. Until then, you can drag them back out.
+          </p>
+          <p class="term-was"><strong>Was on Windows:</strong> the Recycle Bin.</p>
+        </div>
+
+      </div>
+
+      <aside class="bn-pill" lang="bn" style="margin-top: var(--space-7);">
+        আব্বু, কোনো শব্দ না বুঝলে এই পাতায় খুঁজুন। প্রতিটি Mac শব্দের পাশে Windows-এ সেটা কী ছিল, সেটাও লেখা আছে।
+      </aside>
+
+    </section>
+  </main>
+
+  <script src="../scripts/ui.js"></script>
+  <script src="../scripts/nav.js"></script>
+</body>
+</html>

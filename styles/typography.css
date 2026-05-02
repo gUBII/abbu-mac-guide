@@ -1,0 +1,122 @@
+/* Typography — font stacks and the body baseline. */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;700&display=swap');
+
+:root {
+  --font-display: Charter, 'Iowan Old Style', 'Apple Garamond',
+                  'Palatino Linotype', Georgia, serif;
+  --font-body:    -apple-system, BlinkMacSystemFont, 'Inter',
+                  system-ui, 'Helvetica Neue', sans-serif;
+  --font-mono:    'SF Mono', ui-monospace, 'JetBrains Mono',
+                  Menlo, Monaco, 'Cascadia Mono', monospace;
+  --font-bn:      'Noto Serif Bengali', var(--font-display);
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  color: var(--ink);
+  font-feature-settings: 'kern', 'liga', 'calt';
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--text-4xl);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-snug);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  line-height: var(--leading-snug);
+}
+
+h4 {
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+p {
+  margin: 0 0 var(--space-4);
+  max-width: 60ch;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--saffron-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  transition: color var(--duration-fast) var(--ease-out-expo);
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--saffron);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+em, i {
+  font-style: italic;
+}
+
+code, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+kbd {
+  display: inline-block;
+  padding: 2px 8px;
+  background: var(--paper-deep);
+  border: 1px solid var(--rule-strong);
+  border-bottom-width: 2px;
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 0.88em;
+  white-space: nowrap;
+}
+
+[lang="bn"] {
+  font-family: var(--font-bn);
+  line-height: 1.7;
+}
+
+::selection {
+  background: var(--saffron-tint);
+  color: var(--ink);
+}

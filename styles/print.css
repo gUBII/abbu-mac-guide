@@ -1,0 +1,159 @@
+/* Print / PDF — A4 portrait, one slide per page. */
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 18mm 16mm;
+  }
+
+  body {
+    background: white !important;
+    color: var(--ink);
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+
+  /* Hide page chrome */
+  .toolbar,
+  .slide-nav,
+  .progress,
+  .tool-btn,
+  .reference-band,
+  .modules-grid,
+  nav.skiplinks {
+    display: none !important;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Each slide on its own page */
+  .slide {
+    page-break-after: always;
+    break-after: page;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 0 8mm;
+  }
+
+  .slide:last-of-type {
+    page-break-after: auto;
+  }
+
+  .slide-header {
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 6mm;
+    padding-bottom: 3mm;
+  }
+
+  .slide-step {
+    grid-template-columns: auto 1fr;
+    gap: 6mm;
+  }
+
+  .step-number {
+    font-size: 48pt;
+  }
+
+  h1 {
+    font-size: 22pt;
+  }
+
+  h2 {
+    font-size: 16pt;
+  }
+
+  h3 {
+    font-size: 13pt;
+  }
+
+  /* Keep callouts visible but flatten the box-shadow */
+  .bn-pill,
+  .recovery,
+  .success,
+  .tip,
+  .slide-outcome {
+    box-shadow: none;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Bengali pill: keep visible in print */
+  body[data-bn="hidden"] .bn-pill {
+    display: flex !important;
+  }
+
+  /* Placeholders printed as descriptive boxes */
+  .placeholder {
+    border: 1.5px dashed var(--ink-soft);
+    background: white;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .placeholder[data-needed]::before {
+    background: white;
+    border: 1px solid var(--ink-soft);
+  }
+
+  /* Compare table — solid borders for print clarity */
+  .compare-table {
+    border: 1px solid var(--ink);
+  }
+
+  .compare-table th {
+    background: var(--ink) !important;
+    color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .compare-table th,
+  .compare-table td {
+    border: 1px solid var(--ink-soft);
+    padding: 2mm 3mm;
+  }
+
+  /* Hub cards readable in print as a list */
+  .module-card {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: 1px solid var(--ink-soft);
+    box-shadow: none;
+    margin-bottom: 4mm;
+  }
+
+  /* Links: show URL in print */
+  a[href^="http"]::after,
+  a[href^="/"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: var(--ink-soft);
+  }
+
+  a[href^="#"]::after,
+  a[href$=".html"]::after,
+  a[href*="#"]::after {
+    content: "";
+  }
+
+  /* Background gradients off */
+  body {
+    background-image: none !important;
+  }
+
+  /* Force colors when needed */
+  .step-number,
+  .slide-outcome::before,
+  .recovery::before,
+  .success::before,
+  .tip::before,
+  .bn-pill::before {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

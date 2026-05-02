@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 1, First Workflow</title>
+  <meta name="description" content="Filesystem orientation plus your first real Mac workflow: WhatsApp to ATLAS and back.">
+  <link rel="stylesheet" href="../styles/tokens.css">
+  <link rel="stylesheet" href="../styles/typography.css">
+  <link rel="stylesheet" href="../styles/slides.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/print.css" media="print">
+  <style>
+    .module-toc {
+      display: grid;
+      gap: var(--space-3);
+      margin: var(--space-5) 0;
+    }
+    .toc-item {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: var(--space-4);
+      align-items: center;
+      padding: var(--space-4) var(--space-5);
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      color: var(--ink);
+      transition: all var(--duration-fast) var(--ease-out-expo);
+    }
+    .toc-item:hover {
+      border-color: var(--saffron);
+      background: var(--saffron-tint);
+    }
+    .toc-item .num {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      color: var(--saffron);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .toc-item h3 {
+      margin: 0 0 var(--space-1);
+      font-size: var(--text-lg);
+    }
+    .toc-item p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: var(--text-sm);
+    }
+    .toc-item .meta {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--ink-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="toolbar">
+      <a class="toolbar-brand" href="../index.html" data-role="home">← Abbu's Mac Guide</a>
+      <div class="toolbar-controls">
+        <button class="tool-btn" data-action="font-down">A−</button>
+        <span class="tool-btn" data-role="font-label">100%</span>
+        <button class="tool-btn" data-action="font-up">A+</button>
+        <button class="tool-btn" data-action="toggle-bn" aria-pressed="true">বাংলা</button>
+        <button class="tool-btn" data-action="print">⎙ PDF</button>
+      </div>
+    </header>
+
+    <section class="slide">
+      <div class="slide-header">
+        <span>Module 1</span>
+        <span>Overview</span>
+      </div>
+
+      <div class="slide-step">
+        <span class="step-number">01</span>
+        <h1 class="slide-title">Your First Workflow</h1>
+      </div>
+
+      <p class="slide-outcome">
+        By the end of this module, you'll be able to: receive a file on WhatsApp,
+        save it to your Mac, paste it into ATLAS, get a useful answer,
+        and send the result back via Email or WhatsApp.
+      </p>
+
+      <aside class="bn-pill" lang="bn">
+        আব্বু, এই অংশটি শেষ করলে আপনি পারবেন: WhatsApp থেকে ফাইল নিতে, Mac-এ রাখতে, ATLAS-এ পাঠাতে, উত্তর পেতে এবং Email বা WhatsApp-এ ফেরত পাঠাতে।
+      </aside>
+
+      <h2 style="margin-top: var(--space-7);">Four parts. Take a break between each.</h2>
+
+      <nav class="module-toc">
+
+        <a class="toc-item" href="01-welcome.html">
+          <span class="num">A</span>
+          <div>
+            <h3>Welcome &amp; Mental Model</h3>
+            <p>Translate Windows habits into Mac. The five things you must know
+              before you do anything else.</p>
+          </div>
+          <span class="meta">5 slides · 8 min</span>
+        </a>
+
+        <a class="toc-item" href="02-filesystem.html">
+          <span class="num">B</span>
+          <div>
+            <h3>Filesystem Geography</h3>
+            <p>Where files actually live on your Mac. Finder, Downloads,
+              Documents, Home, Desktop, and how to find anything in 2 seconds.</p>
+          </div>
+          <span class="meta">6 slides · 10 min</span>
+        </a>
+
+        <a class="toc-item" href="03-workflow.html">
+          <span class="num">C</span>
+          <div>
+            <h3>The Workflow</h3>
+            <p>WhatsApp → save file → open ATLAS → paste → get answer →
+              copy answer → back to Email or WhatsApp. The full loop.</p>
+          </div>
+          <span class="meta">10 slides · 18 min</span>
+        </a>
+
+        <a class="toc-item" href="04-recovery.html">
+          <span class="num">D</span>
+          <div>
+            <h3>Recovery &amp; Safety</h3>
+            <p>What to do if something goes wrong, and what to never paste
+              into an LLM. The safety net.</p>
+          </div>
+          <span class="meta">4 slides · 6 min</span>
+        </a>
+
+        <a class="toc-item" href="05-quiz.html">
+          <span class="num">★</span>
+          <div>
+            <h3>Quick Check</h3>
+            <p>Eight questions. No grade, just to make sure the important
+              things stuck.</p>
+          </div>
+          <span class="meta">8 questions · 3 min</span>
+        </a>
+
+      </nav>
+
+      <div class="tip" style="margin-top: var(--space-7);">
+        <strong>How to use this module:</strong> click each part in order.
+        Inside each part, use the <em>Next →</em> button at the bottom of every slide,
+        or the <kbd>→</kbd> arrow key on the keyboard. To go back, press <kbd>←</kbd>.
+      </div>
+
+      <aside class="bn-pill" lang="bn">
+        আব্বু, নিচে ডান দিকের <strong>Next →</strong> চাপলে পরের স্লাইড আসবে। কীবোর্ডে <kbd>→</kbd> চাপলেও কাজ করবে।
+      </aside>
+
+      <div class="slide-nav">
+        <a href="../index.html" rel="prev">← Home</a>
+        <a href="01-welcome.html" rel="next">Start Part A →</a>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="../scripts/ui.js"></script>
+  <script src="../scripts/nav.js"></script>
+</body>
+</html>
